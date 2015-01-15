@@ -1,0 +1,26 @@
+{
+  "name": "danone",
+  "version": "0.0.0",
+  "authors": [
+    "darryl-snow <dazsnow63@yahoo.com>"
+  ],
+  "description": "Front-End templates for Danone",
+  "main": "public/index.html",
+  "keywords": [],
+  "license": "Copyright Danone",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "npm-debug.log",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.3",
+    "modernizr": "~2.8.3"
+  }
+}

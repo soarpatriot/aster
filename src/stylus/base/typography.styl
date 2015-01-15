@@ -1,0 +1,58 @@
+// Base styles
+
+html,
+body
+	color					$body-text-colour
+	font-family				$body-font
+	font-kerning			auto
+	font-size				14px
+	font-smooth				always
+	font-weight				400
+	letter-spacing			0.5px
+	text-rendering			optimizeLegibility
+	-webkit-font-smoothing	subpixel-antialiased
+
+a
+	color					$purple--dark
+	text-decoration			none
+	
+	+ActiveFocusHover()
+		color				darken(@color, 20%)
+		
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	color					$headings-colour
+
+.blockquote
+	clearfix()
+	font-size				1.875em
+	line-height				1.6
+	margin					-1 * $base-spacing-unit 0 $base-spacing-unit 0
+	padding					0
+	text-align				center
+	width					100%
+
+	@media $medium-bp
+		fl()
+		margin				0 20px 20px 0
+		text-align			left
+		width				300px
+
+// Helper classes
+
+.caps
+	text-transform			uppercase
+
+.centred
+	text-align				center
+
+.small
+	font-size				0.85em
+
+.subheading
+	font-size				0.5em
+	margin					0.3em 0
