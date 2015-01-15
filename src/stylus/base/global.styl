@@ -1,94 +1,94 @@
 html,
 body
-	background			$body-background
-	
-	&.modal-open
-		overflow		hidden
+    background            $body-background
+    
+    &.modal-open
+        overflow        hidden
 
 *
-	box-sizing			border-box !important
+    box-sizing            border-box !important
 
 .container
-	clear()
-	clearfix()
-	relative()
-	margin				0 auto
-	// padding				0 20px
-	width				300px
+    clear()
+    clearfix()
+    relative()
+    margin                0 auto
+    // padding                0 20px
+    width                300px
 
-	&-mobile
-		margin			0 auto
-		padding			0
-		width			300px
-		
-		@media $medium-bp
-			display		none
+    &-mobile
+        margin            0 auto
+        padding            0
+        width            300px
+        
+        @media $medium-bp
+            display        none
 
-	@media (max-width: 767px)
-		&--more-baddesign
-			padding			0
-			width			100% !important
+    @media (max-width: 767px)
+        &--more-baddesign
+            padding            0
+            width            100% !important
 
-	@media (max-width: 1279px)
-		&--baddesign
-			padding			0
-			width			100% !important
+    @media (max-width: 1279px)
+        &--baddesign
+            padding            0
+            width            100% !important
 
-	@media $small-bp-retina
-		width			560px
+    @media $small-bp-retina
+        width            560px
 
-	@media $medium-bp
-		width			620px
+    @media $medium-bp
+        width            620px
 
-	@media $large-bp
-		padding			0
-		width			940px
+    @media $large-bp
+        padding            0
+        width            940px
 
 .row
-	clearfix()
-	row(12)
+    clearfix()
+    row(12)
 
 .margin
-	margin				$base-spacing-unit
+    margin                $base-spacing-unit
 
-	&--bottom
-		add-margin(bottom)
+    &--bottom
+        add-margin(bottom)
 
-	&--left
-		add-margin(left)
+    &--left
+        add-margin(left)
 
-	&--right
-		add-margin(right)
+    &--right
+        add-margin(right)
 
-	&--top
-		add-margin(top)
-		
+    &--top
+        add-margin(top)
+        
 .padding
-	padding				$base-spacing-unit
+    padding                $base-spacing-unit
 
-	&--bottom
-		add-padding(bottom)
+    &--bottom
+        add-padding(bottom)
 
-	&--left
-		add-padding(left)
+    &--left
+        add-padding(left)
 
-	&--right
-		add-padding(right)
+    &--right
+        add-padding(right)
 
-	&--top
-		add-padding(top)
+    &--top
+        add-padding(top)
 
 .small
-	&-hidden
-		@media (max-width: 767px)
-			display		none !important
+    &-hidden
+        @media (max-width: 767px)
+            display        none !important
 
 .medium
-	&-hidden
-		@media (min-width:768px) and (max-width:1279px)
-			display		none !important
+    &-hidden
+        @media (min-width:768px) and (max-width:1279px)
+            display        none !important
 
 .large
-	&-hidden
-		@media (min-width: 1280px)
-			display		none !important
+    &-hidden
+        @media (min-width: 1280px)
+            display        none !important

@@ -2,19 +2,19 @@ $ = jQuery = require "jQuery"
 
 class LeftNav
 
-	constructor: ->
+    constructor: ->
 
-		@el =
-			taggleBtn: $(".left-navbar-toggle")
-			nav: $(".dropdown-menu")
-		@addEventListeners()
+        @el =
+            taggleBtn: $(".left-navbar-toggle")
+            nav: $(".dropdown-menu")
+        @addEventListeners()
 
-	addEventListeners: ->
+    addEventListeners: ->
 
-		@el.taggleBtn.on "click", =>
-			@el.taggleBtn.toggleClass("toggled-style")
-			@el.nav.parent().toggleClass("open")
-			
+        @el.taggleBtn.on "click", =>
+            @el.taggleBtn.toggleClass("toggled-style")
+            @el.nav.parent().toggleClass("open")
+            
 
 
 module.exports = new LeftNav

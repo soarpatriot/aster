@@ -3,7 +3,7 @@ collapse = require "collapse"
 dropdown = require "dropdown"
 
 module.exports = ->
-	$(".collapse").collapse
-		toggle: false
+    $(".collapse").collapse
+        toggle: false
 
-	$(".dropdown-toggle").dropdown()
+    $(".dropdown-toggle").dropdown()

@@ -2,35 +2,35 @@ $ = jQuery = require "jQuery"
 
 class StickyNavigation
 
-	constructor: ->
+    constructor: ->
 
-		@el =
-			menu: $(".navbar-dropdown-section")
-			window: $(window)
+        @el =
+            menu: $(".navbar-dropdown-section")
+            window: $(window)
 
-		@scrolled = false
+        @scrolled = false
 
-		@addEventListeners()
+        @addEventListeners()
 
-	addEventListeners: ->
+    addEventListeners: ->
 
-		@el.window.on "scroll", =>
-			@scrolled = true
+        @el.window.on "scroll", =>
+            @scrolled = true
 
-		setInterval =>
-			if @scrolled
-				@checkScrollPosition()
-				@scrolled = false
-		, 100
+        setInterval =>
+            if @scrolled
+                @checkScrollPosition()
+                @scrolled = false
+        , 100
 
-	checkScrollPosition: ->
+    checkScrollPosition: ->
 
-		if @el.window.scrollTop() > 115
-			if !@el.menu.hasClass "stuck"
-				@el.menu.addClass "stuck"
-		else
-			if @el.menu.hasClass "stuck"
-				@el.menu.removeClass "stuck"
+        if @el.window.scrollTop() > 115
+            if !@el.menu.hasClass "stuck"
+                @el.menu.addClass "stuck"
+        else
+            if @el.menu.hasClass "stuck"
+                @el.menu.removeClass "stuck"
 
 
 module.exports = new StickyNavigation

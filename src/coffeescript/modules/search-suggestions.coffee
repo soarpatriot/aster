@@ -2,30 +2,30 @@ $ = jQuery = require "jQuery"
 
 class Search
 
-	constructor: ->
-		@el =
-			searchInputs: $(".form-search-query")
-			suggestions: $(".suggestions")
+    constructor: ->
+        @el =
+            searchInputs: $(".form-search-query")
+            suggestions: $(".suggestions")
 
-		@addEventListeners()
+        @addEventListeners()
 
-	addEventListeners: ->
+    addEventListeners: ->
 
-		for input in @el.searchInputs
+        for input in @el.searchInputs
 
-			suggestions = $(input).next()
+            suggestions = $(input).next()
 
-			$(input).on "focus", =>
-				@showSuggestions suggestions
+            $(input).on "focus", =>
+                @showSuggestions suggestions
 
-			$(input).on "blur", =>
-				@hideSuggestions()
+            $(input).on "blur", =>
+                @hideSuggestions()
 
-	showSuggestions: (box) ->
-		# fetch search results
-		box.addClass "show"
+    showSuggestions: (box) ->
+        # fetch search results
+        box.addClass "show"
 
-	hideSuggestions: ->
-		@el.suggestions.removeClass "show"
+    hideSuggestions: ->
+        @el.suggestions.removeClass "show"
 
 module.exports = new Search

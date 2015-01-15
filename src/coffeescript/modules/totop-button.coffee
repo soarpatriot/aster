@@ -2,70 +2,70 @@ $ = jQuery = require "jQuery"
 
 class TotopButton
 
-	constructor: ->
+    constructor: ->
 
-		@el =
-			articleFooter: $(".section-article-footer")
-			articleNavigation: $("nav.article-navigation")
-			body: $("body")
-			button: $(".button-totop")
-			window: $(window)
+        @el =
+            articleFooter: $(".section-article-footer")
+            articleNavigation: $("nav.article-navigation")
+            body: $("body")
+            button: $(".button-totop")
+            window: $(window)
 
-		@scrolled = false
+        @scrolled = false
 
-		if @el.button.length isnt 0
-			@addEventListeners()
+        if @el.button.length isnt 0
+            @addEventListeners()
 
-	addEventListeners: ->
+    addEventListeners: ->
 
-		@el.button.on "click", (e) ->
-			e.preventDefault()
-			$("html, body").animate
-				scrollTop: 0
+        @el.button.on "click", (e) ->
+            e.preventDefault()
+            $("html, body").animate
+                scrollTop: 0
 
-		$(window).scroll =>
-			@scrolled = true
+        $(window).scroll =>
+            @scrolled = true
 
-		setInterval =>
-			if @scrolled
-				@checkButton()
-				if @el.articleNavigation.length isnt 0
-					@checkNavigation()
-				@scrolled = false
-		, 500
+        setInterval =>
+            if @scrolled
+                @checkButton()
+                if @el.articleNavigation.length isnt 0
+                    @checkNavigation()
+                @scrolled = false
+        , 500
 
-	checkButton: ->
+    checkButton: ->
 
-		if @el.window.scrollTop() > 300
-			@showButton()
-		else
-			@hideButton()
+        if @el.window.scrollTop() > 300
+            @showButton()
+        else
+            @hideButton()
 
-	checkNavigation: ->
+    checkNavigation: ->
 
-		if @el.window.scrollTop() > 300
-			# if (@el.window.scrollTop() + @el.window.height()) < (@el.body.height() * 0.75)
-			if (@el.window.scrollTop() + @el.window.height()) < @el.articleFooter.offset().top
-				@showNavigation()
-			else
-				@hideNavigation()
-		else
-			@hideNavigation()
+        if @el.window.scrollTop() > 300
+            # if (@el.window.scrollTop() + @el.window.height()) < (@el.body.height() * 0.75)
+            if (@el.window.scrollTop() + @el.window.height()) < @el.articleFooter.offset().top
+                @showNavigation()
+            else
+                @hideNavigation()
+        else
+            @hideNavigation()
 
-	showButton: ->
-		if not @el.button.hasClass "show"
-			@el.button.addClass "show"
+    showButton: ->
+        if not @el.button.hasClass "show"
+            @el.button.addClass "show"
 
-	hideButton: ->
-		if @el.button.hasClass "show"
-			@el.button.removeClass "show"
+    hideButton: ->
+        if @el.button.hasClass "show"
+            @el.button.removeClass "show"
 
-	showNavigation: ->
-		if not @el.articleNavigation.hasClass "show"
-			@el.articleNavigation.addClass "show"
+    showNavigation: ->
+        if not @el.articleNavigation.hasClass "show"
+            @el.articleNavigation.addClass "show"
 
-	hideNavigation: ->
-		if @el.articleNavigation.hasClass "show"
-			@el.articleNavigation.removeClass "show"
+    hideNavigation: ->
+        if @el.articleNavigation.hasClass "show"
+            @el.articleNavigation.removeClass "show"
 
 module.exports = new TotopButton

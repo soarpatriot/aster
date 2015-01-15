@@ -2,34 +2,34 @@ $ = jQuery = require "jQuery"
 
 class Menu
 
-	constructor: ->
+    constructor: ->
 
-		@el =
-			toggleMenuButton: $(".js-toggle-menu")
-			toggleSearchButton: $(".js-toggle-search")
-			navbar: $(".navbar")
-			inlineSearch: $(".form-search--inline")
+        @el =
+            toggleMenuButton: $(".js-toggle-menu")
+            toggleSearchButton: $(".js-toggle-search")
+            navbar: $(".navbar")
+            inlineSearch: $(".form-search--inline")
 
-		@addEventListeners()
+        @addEventListeners()
 
-	addEventListeners: ->
+    addEventListeners: ->
 
-		$(@el.toggleMenuButton).on "click", (e) =>
-			e.preventDefault()
-			$(e.target).toggleClass "open"
-			@toggleMenu()
+        $(@el.toggleMenuButton).on "click", (e) =>
+            e.preventDefault()
+            $(e.target).toggleClass "open"
+            @toggleMenu()
 
-		$(@el.toggleSearchButton).on "click", (e) =>
-			e.preventDefault()
-			@toggleSearch()
+        $(@el.toggleSearchButton).on "click", (e) =>
+            e.preventDefault()
+            @toggleSearch()
 
-	toggleMenu: ->
-		$(@el.navbar).toggleClass "show"
+    toggleMenu: ->
+        $(@el.navbar).toggleClass "show"
 
-	toggleSearch: ->
-		$(@el.inlineSearch).toggleClass "open"
+    toggleSearch: ->
+        $(@el.inlineSearch).toggleClass "open"
 
-		if $(@el.inlineSearch).hasClass "open"
-			$(@el.inlineSearch).find(".form-search-query").focus()
+        if $(@el.inlineSearch).hasClass "open"
+            $(@el.inlineSearch).find(".form-search-query").focus()
 
 module.exports = new Menu
