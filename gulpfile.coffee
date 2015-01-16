@@ -185,7 +185,7 @@ gulp.task "server", ->
     app.listen Config.port
     lr.listen 35729
     setTimeout ->
-        open "http://localhost:" + Config.port + "/styleguide.html"
+        open "http://localhost:" + Config.port
     , 3000
 
 # Update the livereload server
