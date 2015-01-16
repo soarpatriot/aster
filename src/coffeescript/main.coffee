@@ -1,5 +1,5 @@
 # Lovely welcome message
-console.log "%c Welcome to Danone ", """
+console.log "%c Welcome to Aster ", """
 background: #3498db;
 color: #ffffff;
 font-size: 18px;
@@ -11,3 +11,4 @@ padding: 5px;
 """
   
 require "jQuery"
+require "./modules/home.coffee"
