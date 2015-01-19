@@ -1,5 +1,6 @@
 # Dependencies
 gulp        = require "gulp"
+deploy      = require "gulp-gh-pages"
 plugins        = require("gulp-load-plugins")(lazy: false)
 run            = require "run-sequence"
 critical     = require "critical"
@@ -210,3 +211,9 @@ gulp.task "deploy", ->
     run "images"
     run "copy-files"
     run "critical"
+
+options = 
+  branch: "gh-pages"
+gulp.task "github-deploy", ->
+    gulp.src('./public/**/*').pipe(deploy(options))
+
