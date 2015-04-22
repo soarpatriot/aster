@@ -2,6 +2,7 @@
 /src/lib
 .DS_Store
 /public/*
+/bower_components/*
 node_modules
 npm-debug.log
 *.*.swp

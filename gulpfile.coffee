@@ -21,6 +21,7 @@ Config =
     port: 9000
     publish: false
     src: "./src/"
+    root: "./"
     version: pkg.version
 
 # Reset
@@ -44,20 +45,20 @@ gulp.task "coffeescript", ->
         transform: ["coffeeify"]
         shim:
             jQuery:
-                path: Config.src + "lib/jquery/dist/jquery.js"
+                path: Config.root + "bower_components/jquery/dist/jquery.js"
                 exports: "$"
             dropdown:
-                path: Config.src + "lib/bootstrap/js/dropdown.js"
+                path: Config.root + "bower_components/bootstrap/js/dropdown.js"
                 exports: "dropdown"
                 depends:
                     jQuery: "$"
             collapse:
-                path: Config.src + "lib/bootstrap/js/collapse.js"
+                path: Config.root + "bower_components/bootstrap/js/collapse.js"
                 exports: "collapse"
                 depends:
                     jQuery: "$"
             modernizr:
-                path: Config.src + "lib/modernizr/modernizr.js"
+                path: Config.root + "bower_components/modernizr/modernizr.js"
                 exports: "modernizr"
                 depends:
                     jQuery: "$"
@@ -148,9 +149,6 @@ gulp.task "images", ->
 
 gulp.task "copy-files", ->
 
-    gulp.src Config.src + "lib/**/*"
-    .pipe gulp.dest Config.build + "lib"
-
     gulp.src Config.src + "fonts/*"
     .pipe gulp.dest Config.build + "styles"
 
@@ -201,7 +199,7 @@ notifyLivereload = (event) ->
 
 gulp.task "default", ->
     Config.publish = false
-    run ["coffeescript", "stylus", "jade", "images", "copy-files"], "critical", "watch", "server"
+    run ["coffeescript", "stylus", "jade", "images", "copy-files"],  "watch", "server"
 
 gulp.task "deploy", ->
     Config.publish = true
@@ -210,7 +208,6 @@ gulp.task "deploy", ->
     run "jade"
     run "images"
     run "copy-files"
-    run "critical"
 
 options = 
   branch: "gh-pages"
