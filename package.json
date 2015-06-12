@@ -1,8 +1,8 @@
 {
-  "name": "danone",
+  "name": "aster",
   "version": "0.0.0",
   "main": "index.html",
-  "description": "Front-End templates for Danone",
+  "description": "Front-End templates for aster",
   "keywords": "",
   "dependencies": {
     "jquery": "^2.1.3",

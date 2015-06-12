@@ -47,16 +47,6 @@ gulp.task "coffeescript", ->
             jQuery:
                 path: Config.root + "bower_components/jquery/dist/jquery.js"
                 exports: "$"
-            dropdown:
-                path: Config.root + "bower_components/bootstrap/js/dropdown.js"
-                exports: "dropdown"
-                depends:
-                    jQuery: "$"
-            collapse:
-                path: Config.root + "bower_components/bootstrap/js/collapse.js"
-                exports: "collapse"
-                depends:
-                    jQuery: "$"
             modernizr:
                 path: Config.root + "bower_components/modernizr/modernizr.js"
                 exports: "modernizr"

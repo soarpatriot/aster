@@ -4,10 +4,10 @@
   "authors": [
     "Soar"
   ],
-  "description": "Front-End templates for Danone",
+  "description": "Front-End templates for aster",
   "main": "public/index.html",
   "keywords": [],
-  "license": "Copyright Danone",
+  "license": "MIT",
   "private": true,
   "dependencies": {},
   "devDependencies": {
